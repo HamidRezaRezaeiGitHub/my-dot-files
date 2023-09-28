@@ -22,7 +22,7 @@ function __prompt_command() {
         fi
     }
 
-    PS1="$exit_status @\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\W\[\e[35m\]\`parse_git_branch\`\[\e[m\] \[\033[00m\]\$ "
+    PS1="$exit_status @\[\033[01;32m\]\u \[\033[01;34m\]\W\[\e[35m\]\`parse_git_branch\`\[\033[00m\]:\[\e[m\] \[\033[00m\]\$ "
 }
 
 # don't put duplicate lines or lines starting with space in the history.
@@ -95,6 +95,12 @@ newFolder ()
   newDir="$1"
   [[ -z $newDir ]] && newDir="NewFolder"
   mkdir -p -- "$newDir" && cd -P -- "$newDir"
+}
+
+go ()
+{
+    cd "$1"
+    ls -al
 }
 
 GITHUB_USERNAME="HamidRezaRezaeiGitHub"
