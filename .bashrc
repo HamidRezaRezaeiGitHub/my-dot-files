@@ -100,6 +100,7 @@ newFolder ()
 go ()
 {
     cd "$1"
+    pwd
     ls -al
 }
 
